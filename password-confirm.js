@@ -7,20 +7,28 @@ if (pwd == null || confPwd == null) {
 }
 
 pwd.addEventListener("focusout", () => checkPwd());
-confPwd.addEventListener("focusout", () => checkPwd());
+confPwd.addEventListener("input", () => checkPwd());
+
+if (pwd.value != null)
+    checkPwd();
 
 function checkPwd() {
     const p = pwd.value;
     const cp = confPwd.value;
 
     const pwdParentCL = pwd.parentElement.classList;
+    const cpwdParentCl = confPwd.parentElement.classList;
 
     console.log(p, cp);
-    if (p === cp && p !== "") {
+    if (p === cp) {
         if (pwdParentCL.contains("not-matching"))
             pwdParentCL.remove("not-matching");
+        if (cpwdParentCl .contains("invalid"))
+            cpwdParentCl.remove("invalid");
     } else {
         if (!pwdParentCL.contains("not-matching"))
             pwdParentCL.add("not-matching");
+        if (!cpwdParentCl .contains("invalid"))
+            cpwdParentCl.add("invalid");
     }
 }
