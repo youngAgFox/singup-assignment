@@ -7,17 +7,81 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project Sign Up</title>
     <link rel="stylesheet" href="style.css">
+    <script src="./password-confirm.js" defer></script>
 </head>
 
-<body>
+<body style="display: flex;">
+    <!-- Left hand side - splash image and logo -->
     <div style="position: relative; width: fit-content;">
         <img src="/res/img/ameen-fahmy-gcWd0ts4RCo-unsplash.jpg" 
         alt="A beautiful deep red rose with water droplets reflecting light off the petals and leaves."
-        style="max-height: 100vh;">
-        <cite>
+        style="max-height: 100vh; min-height: 100vh; max-width: 40vw; object-fit: cover; object-position: center;">
+        <div style="position: absolute; top: var(--leader-size); left: 0; width: 100%; 
+        background-color: rgba(0, 0, 0, 0.346); display: flex; align-items: center; justify-content: center;">
+            <img src="/res/img/odin-lined.png" alt="The Odin Project Logo" height="110" style="display: inline-block; margin: 1rem;">
+            <h1 style="display: inline; color: white; font-family: Norse-Bold; font-size: 76px; margin: 0;">ODIN</h1>
+        </div>
+        <cite class="credit">
             Photo by <a href="https://unsplash.com/@ameenfahmy?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Ameen Fahmy</a> on 
             <a href="https://unsplash.com/s/photos/rose?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
         </cite>
+    </div>
+    <!-- Right hand side of the screen -->
+    <div style="display: flex; flex-direction: column; flex: 1; font-weight: 500; max-height: 100vh; overflow-y: auto;">
+        <section style="height: calc(var(--leader-size) + 110px - 2rem); background-color: rgba(220, 220, 220, 0.144); 
+        font-size: 1.05rem; display: flex; border-bottom: 1px solid rgba(220, 220, 220, 0.2);">
+            <p style="align-self: flex-end; margin-left: 0; margin-right: 4rem; font-weight: bold;">
+                This is not a real online service! You know you need something 
+                like this in your life to help you realize your deepest dreams.
+                <br>
+                Sign up <em>now</em> to get started.
+                <br><br>
+                You <em>know</em> you want to.
+            </p>
+        </section>
+        <form action="" method="post" style="flex: 1; display: flex; flex-direction: column;">
+        <section style="display: flex; flex-direction: column; gap: 25px;">
+            <h1 style="margin-bottom: 0;">Let's do this!</h1>
+            <div class="input-container">
+                <div class="input">
+                    <label for="first-name">First Name</label>
+                    <input type="text" name="first_name" id="first-name">
+                </div>
+                <div class="input">
+                    <label for="last-name">Last Name</label>
+                    <input type="text" name="last_name" id="last-name">
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input">
+                    <label for="email">Email</label>
+                    <input type="email" name="email" id="email">
+                </div>
+                <div class="input">
+                    <label for="phone-number">Phone Number</label>
+                    <input type="tel" name="phone_number" id="phone-number">
+                </div>
+            </div>
+            <div class="input-container">
+                <div class="input">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" id="password" minlength="6" required>
+                </div>
+                <div class="input">
+                    <label for="confirm-password">Confirm Password</label>
+                    <input type="password" name="confirm-password" id="confirm-password" required>
+                </div>
+            </div>
+        </section>
+        <section id="form-submission" style="background-color: var(--bg-accent-dark); flex: 1; position: relative;">
+            <button type="submit" 
+                style="text-align: center; border-radius: 8px; background-color: var(--clr-create-account); color: white; font-weight: bold; box-shadow: 3px 1px 8px grey;">
+                Create Account
+            </button>
+            <div style="font-size: 14px; margin-top: 1.5rem;">Already have an account? 
+            <a href="" style="text-decoration: none; color: var(--clr-create-account); font-weight: bold;">Log in</a></div>
+        </section>
+    </form>
     </div>
     
 </body>
