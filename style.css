@@ -64,6 +64,9 @@ section > * {
 
 .input label {
     text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    opacity: 70%;
 }
 
 .input-container {
